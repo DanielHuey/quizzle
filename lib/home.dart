@@ -110,15 +110,27 @@ class _HomePageState extends State<HomePage> {
         //   ),
         // ),
         itemBuilder: ((context, index) {
+          bool fav = false;
           return Padding(
             padding: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
             child: ListTile(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0)),
               tileColor: Colors.amber.shade100.withOpacity(0.25),
-              leading: const Icon(
-                Icons.question_mark,
-                color: Colors.white,
+              leading: StatefulBuilder(
+                builder: (ctx, setState) {
+                  return IconButton(
+                    onPressed: () {
+                      setState(() {
+                        fav = !fav;
+                      });
+                    },
+                    icon: Icon(
+                      fav ? Icons.star : Icons.star_border,
+                      color: Colors.white,
+                    ),
+                  );
+                },
               ),
               title: Text(
                 filtered[index].name,

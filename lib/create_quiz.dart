@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:quizzle/home.dart';
 import 'quiz.dart';
 
 class CreateQuiz extends StatefulWidget {
@@ -143,6 +144,7 @@ class _CreateQuizState extends State<CreateQuiz> {
                           },
                         )
                       : const Text("Provide a Question and an Answer"),
+                  // ignore: prefer_is_empty
                   questionlist.length > 0
                       ? myButton(
                           text: "Save Quiz",
@@ -155,6 +157,9 @@ class _CreateQuizState extends State<CreateQuiz> {
                             quizList.add(quiz);
                             filtered = quizList;
                             noc.pop();
+                            noc.pop();
+                            noc.push(MaterialPageRoute(
+                                builder: (context) => const HomePage()));
                           },
                         )
                       : const Text("Provide at least three questions"),
