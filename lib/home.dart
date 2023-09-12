@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                   applicationName: "Quizzle",
                   applicationVersion: "1.0",
                   applicationLegalese: "GNU GPL",
-                  applicationIcon: Image.asset('asets/hot_mug.png'),
+                  applicationIcon: Image.asset('assets/hot_mug.png'),
                 );
               },
               icon: const Icon(Icons.info))
